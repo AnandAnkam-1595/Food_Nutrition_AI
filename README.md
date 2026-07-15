@@ -136,6 +136,26 @@ Nutrition Summary Dashboard
 
 ---
 
+## Dataset Used
+
+The model was fine-tuned using a custom balanced food detection dataset created by merging multiple Roboflow Universe datasets.
+
+The datasets include:
+
+- Fruits Dataset (9 classes)
+- Food Detection Dataset (63 classes)
+- Fast Food Finder Dataset (10 classes)
+- Indian Food Detection Dataset (23 classes)
+- Indian Food Dataset (7 classes)
+
+The datasets were converted into YOLO format, merged, cleaned, duplicate classes were unified, and class imbalance was reduced before training.
+
+Final Dataset:
+
+- 80 Food Classes
+- Approximately 22,000+ Images
+- YOLO Object Detection Format
+
 # 📊 Key Features
 
 - ✅ Detects multiple food items in a single image.
@@ -220,6 +240,22 @@ The application will automatically open in your browser.
 
 ---
 
+## Fine-Tuning Methodology
+
+The project uses YOLOv8s pretrained weights as the base model.
+
+Fine-tuning Process:
+
+- Started with pretrained YOLOv8s weights.
+- Merged five Roboflow food datasets.
+- Unified duplicate food categories.
+- Balanced class distribution.
+- Trained using Ultralytics YOLOv8.
+- Image Size: 640×640
+- Epochs: 50
+- Optimizer: Default YOLOv8 optimizer
+- Confidence Threshold: 0.70
+
 # 📈 Model Performance
 
 The YOLOv8 model is fine-tuned on a custom food dataset containing **80 food classes**.
@@ -260,6 +296,26 @@ After uploading an image, the application provides:
 - ✅ Nutrition summary dashboard
 
 ---
+# Assumptions
+
+- Nutritional values are estimated **per 100 g** for each detected food item.
+- The detected food class is matched to the closest corresponding entry in the nutrition dataset using fuzzy string matching.
+- Each detected bounding box is treated as a single food item for nutritional estimation.
+- The application assumes that the uploaded image contains clearly visible food items.
+- The custom YOLOv8s model has been trained on 80 food categories, so foods outside these classes may not be recognized.
+- Nutrition estimates are intended for informational purposes and should not be considered medical or dietary advice.
+
+---
+
+# Limitations
+
+- The application does not estimate the actual serving size or weight of food; all nutritional values are based on a standard **100 g serving**.
+- Foods that are visually similar (e.g., different rice dishes or similar desserts) may occasionally be misclassified.
+- Detection accuracy depends on image quality, lighting conditions, camera angle, and occlusion.
+- Food items that are not included in the training dataset may not be detected or may be classified as the closest known class.
+- The nutrition database provides approximate nutritional values and may differ from actual recipes or branded food products.
+- The current implementation analyzes static images only and does not support real-time video or webcam-based detection.
+
 
 # 🔮 Future Improvements
 
