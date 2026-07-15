@@ -1,0 +1,6 @@
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 80
+names: ['apple', 'apple_pie', 'baked_potato', 'banana', 'bell_pepper', 'besan_cheela', 'bread', 'burger', 'channa', 'chapati', 'cheese', 'chicken', 'chicken_fry', 'chicken_roast', 'chips', 'chocolate_bar', 'chutney', 'coke', 'cookie', 'cracker', 'crispy_chicken', 'croissant', 'cucumber', 'deep_fried_chicken_wing', 'donut', 'dosa', 'fanta', 'flafel', 'fool', 'fries', 'frutta_secca', 'grapes', 'gravy', 'grissini', 'gulab_jamun', 'hot_dog', 'ice_cream', 'idli', 'jalebi', 'juice', 'kulfi', 'lasagna', 'lemon', 'mango', 'meduvadai', 'milk', 'momos', 'muffin', 'oil_pasta', 'orange', 'palak_paneer', 'pancake', 'paneer_tikka', 'pani_puri', 'pasta_al_ragu', 'pasta_with_carbonara_sauce', 'peach', 'pear', 'pineapple', 'pizza', 'poha', 'pongal', 'popcorn', 'potato', 'rare_cheese_cake', 'rice', 'roz_blabn', 'salad', 'salatini', 'samosa', 'sandwich', 'steak', 'strawberry', 'taco', 'taquito', 'tomato', 'waffle', 'wara_enab', 'watermelon', 'zucchini']
